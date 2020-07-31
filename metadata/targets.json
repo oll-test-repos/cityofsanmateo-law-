@@ -2,7 +2,7 @@
  "signatures": [
   {
    "keyid": "ba65808977548012b65ab8229f7b939e2339703cec3686ef816f2480274e7f9b",
-   "sig": "35c579c59eadd73d13077da960ecf928e4e8d327da9fb1baa99a7013ca9e9d29e5b9e0a86f1285937075b332862d956d44ed4ee80deee3f5a45d9644dc401eb312446d06c14e9bb09d5979ec85cc2f16e7b669b79fe500b09758518e3bf0f2a7cf85166a7dbf37e0eea5f812f79d96708d4d172b49c970f20da2522998c910340f934395d07248ad2b47752ca4961a514ef3e466f86ea8de566733c40225d0820f63430db67f4b02198e126721ef30bcc136929faee08ec28985ff661022f6ac1947bb5a1f9c8acd189f8a7767efb4958a6be9b7a08dade15719ddc5eac45bd247715556c45ef4d31d263f7373d09e9cf2ddd67c07cfe656c9ac53ba17e9b6ac"
+   "sig": "b0e5e169d285395d64ab65e16a6558f48413ee5be9bd2b21f05aee666aa289b5e718f87c9d10c6268e39e9b664067e0de7f651b0eb3eff10e0b3c74df7ce2da9c028d1e2960cf1efc8dee5a81421d762136cc2a2d1443fc0bd8768ebf71f7b9fb71592c660596e6612c5342abdeb23bfb92a80e4817ee3c6efdf2db710b23b2fc57614f09934640eb22518eb11c31becfec368c6926d415f953e084695c1601b7d44c893a6229e2a0e9d9da718fe3f0b2956235baaa7f5beb0d7f9e3f11d64ae1bb02ae49b477fb226abb6410c17c50925910896b326bcb9eba0e15fc9098c95d7870ea7d087d6eddd393b4169f4ed5c5828110027454f69a5646e52d91b5a7d"
   }
  ],
  "signed": {
@@ -54,14 +54,14 @@
      ],
      "name": "assets",
      "paths": [
-      "cityofsanmateo/law-static-assets"
+      "openlawlibrary/law-static-assets"
      ],
      "terminating": true,
      "threshold": 1
     }
    ]
   },
-  "expires": "2020-10-29T22:20:29Z",
+  "expires": "2020-10-29T22:23:38Z",
   "spec_version": "1.0",
   "targets": {
    "mirrors.json": {
@@ -86,6 +86,6 @@
     "length": 0
    }
   },
-  "version": 2
+  "version": 3
  }
 }
