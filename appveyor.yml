@@ -1,0 +1,94 @@
+image:
+  - Visual Studio 2019
+
+environment:
+  matrix:
+    # For Python versions available on Appveyor, see
+    # http://www.appveyor.com/docs/installed-software#python
+    - PYTHON: "C:\\Python36-x64"
+
+# Do not build feature branch with open Pull Requests
+skip_branch_with_pr: true
+
+# uncomment to RDP at end of build ...
+on_finish:
+  - ps: >-
+      If ($env:DEBUG -eq $True) {
+        $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+      };
+
+init:
+  # exit if secure variables are unset (saves time if fired by a non-team pull request)
+  - ps: if ($env:GH_SSH_PRIVATE_KEY -eq $null) { exit }
+
+  - git config --global user.name oll-bot
+  - git config --global user.email developers@openlawlib.org
+
+install:
+  # the only way we can use the deploy key is by putting it in an environment variable (see above)
+  # and then using PowerShell (ps) to copy the environment variable into a file (see below)
+  # begin/end key lines should be in the environment variable
+  - ps: $key = "-----BEGIN RSA PRIVATE KEY-----`n"
+  - ps: $key += $env:GH_SSH_PRIVATE_KEY.Replace(" ", "`n")
+  - ps: $key += "`n-----END RSA PRIVATE KEY-----`n"
+  - ps: Set-Content c:\users\appveyor\.ssh\id_rsa $key
+  - ps: $fileContent = "-----BEGIN RSA PRIVATE KEY-----`n"
+  - ps: $fileContent += $env:snapshot_key.Replace(" ", "`n")
+  - ps: $fileContent += "`n-----END RSA PRIVATE KEY-----`n"
+  - ps: Set-Content c:\users\appveyor\snapshot $fileContent
+  - ps: $fileContent = "-----BEGIN RSA PRIVATE KEY-----`n"
+  - ps: $fileContent += $env:timestamp_key.Replace(" ", "`n")
+  - ps: $fileContent += "`n-----END RSA PRIVATE KEY-----`n"
+  - ps: Set-Content c:\users\appveyor\timestamp $fileContent
+
+before_build:
+  - ps: >-
+      If ($env:TAF_BRANCH) {
+        git clone -q git@github.com:openlawlibrary/taf.git ..\wheels\taf
+        git -C ..\wheels\taf checkout -q $env:TAF_BRANCH
+        $env:TAF_WHEEL = "-e ..\wheels\taf"
+      } else {
+        $env:TAF_WHEEL = "taf"
+      };
+
+      If ($env:PLATFORM_BRANCH) {
+        git clone -q git@github.com:openlawlibrary/platform.git ..\wheels\platform
+        git -C ..\wheels\platform checkout -q $env:PLATFORM_BRANCH
+        $env:CORE_WHEEL = "-e ..\wheels\platform\core"
+        $env:PARTNERS_WHEEL = "-e ..\wheels\platform\partners"
+      } else {
+        $env:CORE_WHEEL = "--pre oll-core"
+        $env:PARTNERS_WHEEL = "--pre oll-partners"
+      };
+
+  - "%PYTHON%\\python.exe -m pip -q install wheel"
+  - "%PYTHON%\\python.exe -m pip -q install %TAF_WHEEL%"
+  - "%PYTHON%\\python.exe -m pip -q install %CORE_WHEEL%"
+  - "%PYTHON%\\python.exe -m pip -q install %PARTNERS_WHEEL%"
+  - "%PYTHON%\\python.exe -m pip list"
+
+  - git clone git@github.com:oll-test-repos/cityofsanmateo-law-xml.git ..\cityofsanmateo\law-xml
+  - git clone git@github.com:oll-test-repos/cityofsanmateo-law-html.git ..\cityofsanmateo\law-html
+  - git clone  git@github.com:oll-test-repos/cityofsanmateo-law-xml-codified.git ..\cityofsanmateo\law-xml-codified
+
+  - git -C ..\%APPVEYOR_PROJECT_SLUG% remote set-url origin git@github.com:oll-test-repos/cityofsanmateo-law.git
+
+  - "%PYTHON%\\python.exe -m pip -q install wheel"
+  - "%PYTHON%\\python.exe -m pip -q install -r requirements.txt"
+  # print out the git commits for each repo
+  - git -C ..\cityofsanmateo\law-xml rev-parse HEAD
+  - git -C ..\cityofsanmateo\law-xml-codified rev-parse HEAD
+  - git -C ..\cityofsanmateo\law-html rev-parse HEAD
+
+build_script:
+  - ps: $env:FLAG = if ($env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null) { "--deploy" }
+
+  # merge commits of update or speculative branches
+  - "%PYTHON%\\python.exe  -m oll.tools.cli ci merge_commits --library-root .. --auth ../%APPVEYOR_PROJECT_SLUG% %FLAG%"
+
+  # update timestamp and/or snapshot metadata files if about to expire
+  # if previous command merges something to master, this command won't update anything
+  - "%PYTHON%\\python.exe -m oll.tools.cli ci update_timestamp_and_snapshot --auth ../%APPVEYOR_PROJECT_SLUG% --expires-in-next-hours %SCHEDULED_BUILD_INTERVAL% %FLAG%"
+
+test_script:
+  - echo Skipping doomed test discovery to save time

@@ -155,7 +155,7 @@
     }
     ```
 
-1. sign *repositories.json*: `taf targets sign .\smc-law-test\ --keystore .\keystore\`
+1. sign *repositories.json*: `taf targets sign . --keystore keystore`
 
 1. Copy *appveyor.yml* from: https://gist.github.com/danixeee/62b72008ac2a1e07614a500a8b897d82
 
