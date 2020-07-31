@@ -1,0 +1,43 @@
+{
+    "repositories": {
+        "cityofsanmateo/law-docs": {
+            "custom": {
+                "allow-unauthenticated-commits":true,
+                "serve":"latest",
+                "location_regex":"~/.*\\.pdf$"
+            }
+        },
+        "cityofsanmateo/law-xml": {
+            "custom": {
+                "type":"xml",
+                "allow-unauthenticated-commits":true,
+                "serve":"latest",
+                "serve-prefix":"_uncodified_xml"
+            }
+        },
+        "cityofsanmateo/law-html": {
+            "custom": {
+                "preview":"https://github.com/oll-test-repos/cityofsanmateo-law-html-preview.git",
+                "type":"html",
+                "serve":"historical",
+                "location_regex":"/"
+            }
+        },
+        "cityofsanmateo/law-xml-codified": {
+            "custom": {
+                "preview":"https://github.com/oll-test-repos/cityofsanmateo-law-xml-codified-preview.git",
+                "type":"xml-codified",
+                "serve":"historical",
+                "serve-prefix":"_xml"
+            }
+        },
+        "openlawlibrary/law-static-assets": {
+            "custom": {
+                "type":"static-assets",
+                "allow-unauthenticated-commits":true,
+                "serve":"latest",
+                "location_regex":"~.+(_document|_reader).+$"
+            }
+        }
+    }
+}
