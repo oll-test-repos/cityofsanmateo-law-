@@ -89,6 +89,14 @@ build_script:
   # update timestamp and/or snapshot metadata files if about to expire
   # if previous command merges something to master, this command won't update anything
   - "%PYTHON%\\python.exe -m oll.tools.cli ci update_timestamp_and_snapshot --auth ../%APPVEYOR_PROJECT_SLUG% --expires-in-next-hours %SCHEDULED_BUILD_INTERVAL% %FLAG%"
+  
+notifications:
+  - provider: Slack
+    incoming_webhook:
+      # post to the fire channel
+      secure: KUaR+KAqX1jU0LF7kRDKHHGEAoItFzIHSjcreyRvnrT1vcX5+4iV77Ivysxl8jhh8ocUE0JCcmcKI0xPTb+M+EMfb8xk9L7+XCTdNubjU5w=
+    on_build_success: false
+
 
 test_script:
   - echo Skipping doomed test discovery to save time
