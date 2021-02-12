@@ -2,7 +2,7 @@
  "signatures": [
   {
    "keyid": "ba65808977548012b65ab8229f7b939e2339703cec3686ef816f2480274e7f9b",
-   "sig": "335899625f14cd3fb03d42fac16d0eb4d818855ff0cd21e4eaca71b54c8cccf7a7ea2dda817a7d381a2af5e8bb1bd2f3d24fdf9a6e1d4b68ffcc0e25c4cc969d2153563c5b88da123fef65bc4a706009cc9b3a3ccc08ee6f37c9577b30a9680d378ec8cec6ee22a0667d61298a2e7e5443a117242587ad85808df85691a0012e00e56a8900ffa0e6c0ba4cf3177ac005c0c6d5af60928c05af63add80a62d125191a35ae1a3b1848d15eee9c637cf23df095c72973c86536f86ef002abf063fdcc0604923096a4be8cc468d7e3462f57670f4bc564bd65dc48e1d77d9fd87f11c9204007baaee19ae6e6ba4384b8ab2f7599cb03f9db16ca20b916847c7864c5"
+   "sig": "2e94f1003ce804397beb51fb8686067d949e585f5783d1c0f7dde1555b18d8dafbfed599dbd9290c641ab39be1eb4b781c9cc5d9bf4977b942f034d567612aa2afca0ed57fb52e0c3be290689ea5cc1fe49d55e704e0e89b31dee1abc5ddb143714b8b51969a10b7dee152ff30ad15b0126a31a236ada47df2207c42f15e2299fab1b04d7a72300280cbcb4d3c4e0ed9cd85d1dbea93e7ea018934116e95767c04f1449bcd7fc3f607260a6977f2160d2ffaf1708bc405a639f4119a91fe817132ec5d67e0a8540cc5816e3e7799e350f8ed4e8d1e583dd8f90fe3c8cecc5f1ae3425e5a0b43042bb9b066ed753007d921e0648ea2b9d7442ab38b73c85e6dab"
   }
  ],
  "signed": {
@@ -61,7 +61,7 @@
     }
    ]
   },
-  "expires": "2021-02-11T18:01:09Z",
+  "expires": "2021-05-13T14:57:16Z",
   "spec_version": "1.0",
   "targets": {
    "mirrors.json": {
@@ -78,6 +78,76 @@
     },
     "length": 1394
    },
+   "scripts/repo/changed/1_scirpt.py": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   },
+   "scripts/repo/changed/2_script.py": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   },
+   "scripts/repo/completed/1_script.py": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   },
+   "scripts/repo/failed/1_script1.py": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   },
+   "scripts/repo/failed/2_script2.py": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   },
+   "scripts/repo/suceeded/1_script.py": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   },
+   "scripts/repo/suceeded/2_script.py": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   },
+   "scripts/repo/unchanged/1_script.py": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   },
+   "scripts/repo/unchanged/2_script.py": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   },
+   "scripts/repo/unchanged/3_script.py": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   },
    "test-auth-repo": {
     "hashes": {
      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -86,6 +156,6 @@
     "length": 0
    }
   },
-  "version": 4
+  "version": 5
  }
 }
