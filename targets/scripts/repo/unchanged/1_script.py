@@ -1,20 +1,25 @@
+import sys
 import argparse
 import json
 
 
+def process_stdin():
+   return sys.stdin.read()
+
 def do_something(data):
-    print(data["changed"])
-    print(data["event"])
+    data["update"]["event"]
+    transient = data["state"]["transient"]
+    persistent = data["state"]["persistent"]
+    transient.update({"script1": {"cityofsanamteo/law": "this is transient"}})
+    persistent.update({"script1": {"cityofsanamteo/law": "this is persistent"}})
     return {
-        "transient": "hello from transient",
-        "persistent": "hello from persistent"
+        "transient": transient,
+        "persistent": persistent
     }
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument('--data')
 if __name__ == '__main__':
-    args = parser.parse_args()
-    data = json.loads(args.data)
+    data = process_stdin()
+    print(data)
     data = json.loads(data)
     print(json.dumps(do_something(data)))
