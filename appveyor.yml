@@ -91,7 +91,7 @@ build_script:
 
   # update timestamp and/or snapshot metadata files if about to expire
   # if previous command merges something to master, this command won't update anything
-  - "%PYTHON%\\python.exe -m oll.tools.cli ci update-timestamp-and-snapshot --auth ../%APPVEYOR_PROJECT_SLUG% --expires-in-next-hours %SCHEDULED_BUILD_INTERVAL% %FLAG%"
+  - "%PYTHON%\\python.exe -m oll.tools.cli ci update-timestamp-and-snapshot --auth ../%APPVEYOR_PROJECT_SLUG% %FLAG%"
   
 notifications:
   - provider: Slack
