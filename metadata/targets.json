@@ -1,0 +1,113 @@
+{
+ "signatures": [
+  {
+   "keyid": "ba65808977548012b65ab8229f7b939e2339703cec3686ef816f2480274e7f9b",
+   "sig": "959b4964422e8dc38ecd0b4167dcc44945585d9751607b725a13ef1115cb965208edfab954b373dfb9aa1baf786d023caa24bc5ebc66c9e3498985fb7ba21d5e646ec56dab029113ce50e3fedf96b67c94c0e786aa61e6d476e822e32b9f22b40f516a0c0f64e50c7cb7d2e9298c3756c7c1c6dc0f9a154556adca31d3a66ce8258b4406103bd7dbf8e135e864e5ffaa9e394c75be8e2ab9f8e2bf5478ee25ee9b28c9ec786958c5b8c90affaf12371e4e9c00811b16719c45e1c5ae0520cd4d1b9a9627e048603dcb0579af6a877de7606ff13cd79c8c530ed2798f5e729e8c80b18fee6da6fe9dffbd9fe8557d98ac1b760a76ee272e4a252be5f92baf90cb"
+  }
+ ],
+ "signed": {
+  "_type": "targets",
+  "delegations": {
+   "keys": {
+    "ba65808977548012b65ab8229f7b939e2339703cec3686ef816f2480274e7f9b": {
+     "keyid_hash_algorithms": [
+      "sha256",
+      "sha512"
+     ],
+     "keytype": "rsa",
+     "keyval": {
+      "public": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtdvJF1Q7fRNTQfgGMH/W\n2Sb4O/PemLHKcBj6Q1Nadvii+lF+lfsD/VqzEuNaM2fpJpostWzJR1jdeyjRZS9G\ndToEA9iSD0MczHRLWa9a1NMcPBC/Edts1oXogk23+NSL/Ugc5H+WikDuwMMYhA3o\nNgVgAtfDfJQJFkbI033DwcYjbBmlt/gnTVNUSHuoG8M2EurchMnZZIqSawEaL82Q\nIFUhEuGSljcb/WRj6XHY7upCvjJOMN2kH/zz4kGR8j5t61TKiLiepjunuQMGg+fl\njEm4v0fandpwWLdx7kYSbftmbQjnuPhBd3g3BQ721O4dYkLA/ncca9XryLqN8Cac\ngQIDAQAB\n-----END PUBLIC KEY-----"
+     },
+     "scheme": "rsa-pkcs1v15-sha256"
+    }
+   },
+   "roles": [
+    {
+     "keyids": [
+      "ba65808977548012b65ab8229f7b939e2339703cec3686ef816f2480274e7f9b"
+     ],
+     "name": "law",
+     "paths": [
+      "cityofsanmateo/law-xml",
+      "cityofsanmateo/law-html",
+      "cityofsanmateo/law-xml-codified",
+      "capstone",
+      "branch",
+      "law/capstone",
+      "law/branch"
+     ],
+     "terminating": true,
+     "threshold": 1
+    },
+    {
+     "keyids": [
+      "ba65808977548012b65ab8229f7b939e2339703cec3686ef816f2480274e7f9b"
+     ],
+     "name": "docs",
+     "paths": [
+      "cityofsanmateo/law-docs"
+     ],
+     "terminating": true,
+     "threshold": 1
+    },
+    {
+     "keyids": [
+      "ba65808977548012b65ab8229f7b939e2339703cec3686ef816f2480274e7f9b"
+     ],
+     "name": "assets",
+     "paths": [
+      "cityofsanmateo/law-static-assets"
+     ],
+     "terminating": true,
+     "threshold": 1
+    },
+    {
+     "keyids": [
+      "ba65808977548012b65ab8229f7b939e2339703cec3686ef816f2480274e7f9b"
+     ],
+     "name": "rdf",
+     "paths": [
+      "cityofsanmateo/law-rdf",
+      "rdf/capstone",
+      "rdf/branch"
+     ],
+     "terminating": true,
+     "threshold": 1
+    }
+   ]
+  },
+  "expires": "2023-05-08T03:52:51Z",
+  "spec_version": "1.0.0",
+  "targets": {
+   "mirrors.json": {
+    "hashes": {
+     "sha256": "d980ea78cd645663f9375b5c44ec874f2fdcd777dc2d5d660e07c2358dfbf299",
+     "sha512": "b5327f9a7d2b5a048bb475a3933b91954b7a6da2fe24d4a5573462274a4595e988d57dff5578ae38bc93e21f52534273d69d6c9405dc49f61a515a73e7f45e3a"
+    },
+    "length": 148
+   },
+   "protected/info.json": {
+    "hashes": {
+     "sha256": "3bbe27b73ee3a8c31b1f135fe7fc57769f6d5b85429f7db19538dc4aae703129",
+     "sha512": "83ad4e69218ae677a69e1e0dce1fd6bc8b54cacf54fe7c923c212d62c3def1cdb97a39831c8f26f1116bcbd6d7c6f86dd4163bb38ba4f3576017485ccb439115"
+    },
+    "length": 53
+   },
+   "repositories.json": {
+    "hashes": {
+     "sha256": "d4d5a84ba945391cfaf7300f4be35d3582b513ca8e017661f0f4baffb8101d57",
+     "sha512": "09a27764ed97ab041fb264866196de3a3d4ebb046555e1dcb0f4656fce2794090489039d3fbe01bc98d0fdfa621a87cc7c3ed2dbd9562eed0cba02585131002a"
+    },
+    "length": 1577
+   },
+   "test-auth-repo": {
+    "hashes": {
+     "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+     "sha512": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+    },
+    "length": 0
+   }
+  },
+  "version": 1
+ }
+}
