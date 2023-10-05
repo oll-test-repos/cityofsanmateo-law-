@@ -3,7 +3,7 @@
         "cityofsanmateo/law-docs": {
             "custom": {
                 "allow-unauthenticated-commits":true,
-                "serve":"latest",
+                "serve":"latest123",
                 "location_regex":"~/.*\\.pdf$"
             }
         },
