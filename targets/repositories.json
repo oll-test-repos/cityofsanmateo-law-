@@ -3,8 +3,9 @@
         "cityofsanmateo/law-docs": {
             "custom": {
                 "allow-unauthenticated-commits":true,
-                "serve":"latest123",
-                "location_regex":"~/.*\\.pdf$"
+                "serve":"latest",
+                "location_regex":"~/.*\\.pdf$",
+                "routes": [".*\\.pdf"]
             }
         },
         "cityofsanmateo/law-xml": {
@@ -20,7 +21,8 @@
                 "preview":"git@github.com:oll-test-repos/cityofsanmateo-law-html-preview.git",
                 "type":"html",
                 "serve":"historical",
-                "location_regex":"/"
+                "location_regex":"/",
+                "routes": [".*"]
             }
         },
         "cityofsanmateo/law-xml-codified": {
@@ -43,7 +45,9 @@
                 "type":"static-assets",
                 "allow-unauthenticated-commits":true,
                 "serve":"latest",
-                "location_regex":"~.+(_document|_reader).+$"
+                "location_regex":"~.+(_document|_reader).+$",
+                "is_fallback": true,
+                "routes": [".*_document/.*", "_reader/.*"]
             }
         }
     }
