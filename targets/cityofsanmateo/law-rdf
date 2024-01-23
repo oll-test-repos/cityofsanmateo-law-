@@ -1,6 +1,5 @@
 {
+    "build-date": "2024-01-23",
     "branch": "master",
-    "build-date": "2023-12-26",
-    "commit": "a2d33f22498319b6e9e332c177111d7187b2f7e4",
-    "codified-date": "2023-01-01"
+    "commit": "a2d33f22498319b6e9e332c177111d7187b2f7e4"
 }
