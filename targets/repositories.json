@@ -1,4 +1,5 @@
 {
+    "scopes": ["us/ca/cities/san-mateo"],
     "repositories": {
         "cityofsanmateo/law-docs": {
             "custom": {
@@ -47,7 +48,7 @@
                 "serve":"latest",
                 "location_regex":"~.+(_document|_reader).+$",
                 "is_fallback": true,
-                "routes": [".*_document/.*", "_reader/.*"]
+                "routes": [".*/_document/.*", "_reader/.*"]
             }
         }
     }
